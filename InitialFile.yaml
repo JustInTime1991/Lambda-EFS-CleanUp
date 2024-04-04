@@ -2,5 +2,5 @@ Resources:
   TestEFS:
     Type: AWS::EFS::FileSystem
     Properties:
-      AvailabilityZoneName : "ue-east-1"
+      AvailabilityZoneName : "us-east-1"
       
