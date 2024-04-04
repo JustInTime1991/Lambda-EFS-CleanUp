@@ -1,0 +1,6 @@
+Resources:
+  TestEFS:
+    Type: AWS::EFS::FileSystem
+    Properties:
+      AvailabilityZoneName : ue-east-1a
+      
