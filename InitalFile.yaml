@@ -1,3 +1,6 @@
 Resources:
-  HelloBucket:
-    Type: 'AWS::S3::Bucket'
+  TestEFS:
+    Type: AWS::EFS::FileSystem
+    Properties:
+      AvailabilityZoneName : ue-east-1a
+      
