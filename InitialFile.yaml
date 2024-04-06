@@ -1,12 +1,31 @@
 Resources:
   TestEFS:
-    Type: 'AWS::EFS::FileSystem'
+    Type: AWS::EFS::FileSystem
     Properties:
       AvailabilityZoneName : "us-east-1a"
 
   TestEFSAP:
-    Type: 'AWS::EFS::AccessPoint'  
+    Type: AWS::EFS::AccessPoint  
     Properties:
       FileSystemId: !Ref TestEFS
       RootDirectory: 
         Path: "/testpath/test"
+
+  MountTargetVPC:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: 172.31.0.0/16
+
+  MountTargetSubnetOne:
+    Type: AWS::EC2::Subnet
+    Properties:
+      CidrBlock: 172.31.1.0/24
+      VpcId: !Ref MountTargetVPC
+      AvailabilityZone: "us-east-1a"
+
+  MountTargetResource1:
+    Type: AWS::EFS::MountTarget
+    Properties:
+      FileSystemId: !Ref TestEFS
+      SubnetId: !Ref MountTargetSubnetOne
+      SecurityGroups: !Ref 
