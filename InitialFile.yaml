@@ -37,4 +37,7 @@ Resources:
       GroupDescription: "Lambda-EFS-Cleanup-SC"
       SecurityGroupEgress:
         - CidrIP: 172.31.1.0/16
+          IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
       VpcId: !Ref MountTargetVPC
