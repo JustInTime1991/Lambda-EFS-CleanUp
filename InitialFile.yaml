@@ -28,7 +28,7 @@ Resources:
     Properties:
       FileSystemId: !Ref TestEFS
       SubnetId: !Ref MountTargetSubnetOne
-      SecurityGroups: !Ref 
+      SecurityGroups: !Ref SecGroup
 
   SecGroup:
     Type: AWS::EC2::SecurityGroup
@@ -37,4 +37,4 @@ Resources:
       SecurityGroupIngress: 
       - CidrIp: 172.31.0.0/16
       VpcId: !Ref MountTargetVPC
-      
+
