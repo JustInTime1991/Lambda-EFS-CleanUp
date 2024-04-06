@@ -28,6 +28,6 @@ Resources:
     Properties:
       FileSystemId: !Ref TestEFS
       SubnetId: !Ref MountTargetSubnetOne
-      
-
+      SecurityGroups:
+      - !GetAtt MountTargetVPC.DefaultSecurityGroup
 
