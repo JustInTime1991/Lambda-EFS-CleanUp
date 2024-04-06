@@ -1,6 +1,12 @@
 Resources:
   TestEFS:
-    Type: AWS::EFS::FileSystem
+    Type: 'AWS::EFS::FileSystem'
     Properties:
       AvailabilityZoneName : "us-east-1a"
-      
+
+  TestEFS-AccessPoint:
+    Type: 'AWS::EFS::AccessPoint'  
+    Properties:
+      FileSystemId: !Ref TestEFS
+      RootDirectory: 
+        Path: "/testpath/test"
