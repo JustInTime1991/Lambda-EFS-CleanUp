@@ -29,3 +29,12 @@ Resources:
       FileSystemId: !Ref TestEFS
       SubnetId: !Ref MountTargetSubnetOne
       SecurityGroups: !Ref 
+
+  SecGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: "IaC Lambda EFS Cleanup Security Group"
+      SecurityGroupIngress: 
+      - CidrIp: 172.31.0.0/16
+      VpcId: !Ref MountTargetVPC
+      
