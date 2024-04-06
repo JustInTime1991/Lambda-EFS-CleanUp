@@ -4,7 +4,7 @@ Resources:
     Properties:
       AvailabilityZoneName : "us-east-1a"
 
-  TestEFS-AccessPoint:
+  TestEFSAP:
     Type: 'AWS::EFS::AccessPoint'  
     Properties:
       FileSystemId: !Ref TestEFS
