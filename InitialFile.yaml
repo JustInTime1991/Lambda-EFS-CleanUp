@@ -53,6 +53,9 @@ Resources:
       Handler: index.handler
       Role: arn:aws:iam::447177954691:role/lambdaefscleanup
       Code: 
+          ZipFile: >
+            def handler(event, context):
+              print("Hello World!")
       FileSystemsConfigs:
         - Arn: !GetAtt TestEFS.Arn
         - LocalMountPath: "/mnt/testpath"
