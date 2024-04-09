@@ -55,7 +55,7 @@ Resources:
       FileSystemConfigs:
         - Arn: !GetAtt TestEFSAP.Arn
           LocalMountPath: "/mnt/testpath"
-      Runtime: Python3.12
+      Runtime: Python3.8
       Timeout: 5
       VpcConfig:
         SecurityGroupIds:
