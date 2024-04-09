@@ -49,7 +49,7 @@ Resources:
       Handler: index.handler
       Role: arn:aws:iam::447177954691:role/lambdaefscleanup
       Code: 
-          ZipFile: >
+          ZipFile: |
             def handler(event, context):
               print("Hello World!")
       FileSystemConfigs:
