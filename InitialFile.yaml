@@ -53,7 +53,7 @@ Resources:
             def handler(event, context):
               print("Hello World!")
       FileSystemConfigs:
-        - Arn: !GetAtt TestEFS.Arn
+        - Arn: !GetAtt TestEFSAP.Arn
           LocalMountPath: "/mnt/testpath"
       Runtime: Python 3.12
       Timeout: 5
