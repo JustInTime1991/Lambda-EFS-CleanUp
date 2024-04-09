@@ -51,7 +51,7 @@ Resources:
     Type: AWS::Lambda::Function
     Properties:
       Handler: index.handler
-      Role: 
+      Role: arn:aws:iam::447177954691:role/lambdaefscleanup
       Code: 
       FileSystemsConfigs:
         - Arn: !GetAtt TestEFS.Arn
