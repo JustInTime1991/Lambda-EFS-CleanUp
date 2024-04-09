@@ -40,4 +40,24 @@ Resources:
           IpProtocol: tcp
           FromPort: 80
           ToPort: 80
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 2049
+          ToPort: 2049
+          CidrIP: 172.31.1.0/16
       VpcId: !Ref MountTargetVPC
+
+  EFSCleanUpLambda:
+    Type: AWS::Lambda::Function
+    Properties:
+      Handler: index.handler
+      Role: 
+      Code: 
+      Runtime: Python 3.12
+      Timeout: 5
+      VpcConfig:
+        SecurityGroupIds:
+          - !Ref SecGroup
+        SubnetIds:
+          - subnet-06ce4c655effc0d9c  
+ 
