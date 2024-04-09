@@ -44,8 +44,7 @@ Resources:
 
   EFSCleanUpLambda:
     Type: AWS::Lambda::Function
-    DependsOn:
-      - !Ref TestEFS
+    DependsOn: TestEFS
     Properties:
       Handler: index.handler
       Role: arn:aws:iam::447177954691:role/lambdaefscleanup
